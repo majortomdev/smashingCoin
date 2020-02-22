@@ -10,7 +10,7 @@ class CryptoBlockchain{
     obtainLatestBlock(){
         return this.blockchain[this.blockchain.length - 1];
     }
-    addNewBlock(newBlock){
+    addNewBlock(newBlock){ //setting a new block to contain hash of the previous one- so the current one will be the previous to a new one....
         newBlock.precedingHash = this.obtainLatestBlock().hash;
         newBlock.hash = newBlock.computeHash();        
         this.blockchain.push(newBlock);
